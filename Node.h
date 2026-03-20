@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "Driver.h"
+#include "Driver.h" // for when driver is implemented
 
 #include <iostream>
 #include <iomanip>
@@ -11,7 +11,7 @@
 
 using namespace std;
 
-class LinkedList;
+class LinkedList; // forward dec for LL
 
 class Node {
     private:
@@ -21,7 +21,7 @@ class Node {
     public:
         Node(Driver* driver);
 
-        friend class LinkedList;
+        friend class LinkedList; // LL gets access to priv mem
 };
 
 #endif
