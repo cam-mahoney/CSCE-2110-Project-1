@@ -1,7 +1,7 @@
 #ifndef NODE_H
 #define NODE_H
 
-#pragma once
+#pragma once // header guard, prevents multiple inclu from this header
 
 #include "Driver.h" // for when driver is implemented
 
