@@ -8,6 +8,9 @@ class DriverDatabase {
     private:
         HashTable drivers;
         LinkedList inactiveDrivers;
+        LinkedList countyList;
+        LinkedList dateList;
+        
     public: 
         DriverDatabase(int size);
         void loadFromFile();

@@ -13,54 +13,86 @@ LinkedList::~LinkedList() {
         current = current->next;
 
         // delete stored Driver
-        delete temp->data;
         delete temp;
     }
 }
 
-void LinkedList::insertBeginning(Driver* driver) {
-    Node* newNode = new Node(driver);
-    newNode->next = head;
-    head = newNode;
-}
-
-void LinkedList::insert(Driver* driver) {
+void LinkedList::insertByCounty(Driver* driver) {
     Node* newNode = new Node(driver);
 
     if (head == nullptr) {
+        head = newNode;
+        tail = newNode;
+        return;
+    }
+
+    // insert at beginning
+    if (driver->getCounty() < head->data->getCounty()) {
+        newNode->next = head;
         head = newNode;
         return;
     }
 
     Node* current = head;
-    while (current->next != nullptr) {
+
+    while (current->next != nullptr &&
+           current->next->data->getCounty() < driver->getCounty()) {
         current = current->next;
     }
 
+    newNode->next = current->next;
     current->next = newNode;
+
+    // update tail if inserted at end
+    if (newNode->next == nullptr) {
+        tail = newNode;
+    }
 }
 
-Driver* LinkedList::search(int id) const {
+void LinkedList::insertByDate(Driver* driver) {
+    Node* newNode = new Node(driver);
+
+    if (head == nullptr) {
+        head = newNode;
+        tail = newNode;
+        return;
+    }
+
+    // insert at beginning (oldest)
+    if (driver->getIssueDate() < head->data->getIssueDate()) {
+        newNode->next = head;
+        head = newNode;
+        return;
+    }
+
     Node* current = head;
 
-    while (current != nullptr) {
-        if (current->data->getId() == id) {
-            return current->data;
-        }
+    while (current->next != nullptr &&
+           current->next->data->getIssueDate() < driver->getIssueDate()) {
         current = current->next;
     }
 
-    return nullptr;
+    newNode->next = current->next;
+    current->next = newNode;
+
+    // update tail if inserted at end
+    if (newNode->next == nullptr) {
+        tail = newNode;
+    }
 }
 
-void LinkedList::remove(int id) {
+
+void LinkedList::removeNode(Driver* driver) {
     if (head == nullptr) return;
 
-    if (head->data->getId() == id) {
+    if (head->data == driver) {
         Node* temp = head;
         head = head->next;
 
-        delete temp->data;
+        if (head == nullptr) {
+            tail = nullptr;
+        }
+
         delete temp;
         return;
     }
@@ -68,11 +100,14 @@ void LinkedList::remove(int id) {
     Node* current = head;
 
     while (current->next != nullptr) {
-        if (current->next->data->getId() == id) {
+        if (current->next->data == driver)  {
             Node* temp = current->next;
             current->next = temp->next;
 
-            delete temp->data;
+            if (temp == tail) {
+                tail = current;
+            }
+
             delete temp;
             return;
         }

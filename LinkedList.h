@@ -1,8 +1,6 @@
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 
-using namespace std;
-
 class Driver;
 class Node;
 
@@ -10,15 +8,19 @@ class Node;
 class LinkedList {
 private:
     Node* head;
+    Node* tail;
     
 public:
     LinkedList();
     ~LinkedList();
 
-    void insertBeginning(Driver* driver);
-    void insert(Driver* driver);
-    Driver* search(int id) const;
-    void remove(int id);
+    void insertByCounty(Driver* driver);
+    void insertBYDate(Driver* driver);
+
+    void removeNode(Driver* driver);
+
+    Node* getHead() const;
+    Node* getTail() const;
 };
 
 
