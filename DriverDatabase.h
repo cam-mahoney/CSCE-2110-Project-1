@@ -4,27 +4,30 @@
 #include "HashTable.h"
 #include "LinkedList.h"
 
+class Driver;
+
 class DriverDatabase {
     private:
-        HashTable drivers;
-        LinkedList inactiveDrivers;
+        HashTable activeDrivers;
+
         LinkedList countyList;
         LinkedList dateList;
-        
+        LinkedList inactiveDrivers;
+
     public: 
         DriverDatabase(int size);
+        ~DriverDatabase();
+
         void loadFromFile();
+
         void insertDriver(Driver* d);
+
         void retrieveNewest(int N);
         void retrieveOldest(int N);
+
         void removeDriver(int id, bool isMigrating); // move to inactive list
 
-        void moveToInactive(Driver* d);
         Driver* searchDriver(int id);
-
-
-
-
 };
 
 #endif
