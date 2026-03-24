@@ -115,3 +115,15 @@ void LinkedList::removeNode(Driver* driver) {
     }
 }
 
+Driver* LinkedList::searchByID(int id) { // added later
+    Node* temp = head;
+
+    while (temp != nullptr) {
+        if (temp->data->getID() == id)
+            return temp->data;
+
+        temp = temp->next;
+    }
+
+    return nullptr;
+}
