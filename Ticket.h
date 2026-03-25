@@ -8,30 +8,17 @@ using namespace std;
 
 class Ticket {
 private:
-    bool hasTicket;
     Date date;
     string location;
 
 public:
-    Ticket() : hasTicket(false) {}
+    Ticket();
 
-    void addTicket(Date d, string loc) { //adds a ticket
-        hasTicket = true;
-        date = d;
-        location = loc;
-    }
+    Date getDate() const; //returns the date of the ticket
 
-    bool exists() const { //returns true if the driver has a ticket
-        return hasTicket;
-    }
+    string getLocation() const;
 
-    Date getDate() const { //returns the date of the ticket
-        return date;
-    }
-
-    std::string getLocation() const { //returns the location of the ticket
-        return location;
-    }
+    void display() const;
 };
 
 #endif

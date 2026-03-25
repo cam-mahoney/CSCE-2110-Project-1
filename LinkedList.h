@@ -15,7 +15,7 @@ public:
     ~LinkedList();
 
     void insertByCounty(Driver* driver);
-    void insertBYDate(Driver* driver);
+    void insertByDate(Driver* driver);
     Driver* searchByID(int id); // added later
 
     void removeNode(Driver* driver);
