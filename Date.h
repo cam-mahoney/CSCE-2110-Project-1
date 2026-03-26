@@ -15,7 +15,7 @@ public:
     Date(int d, int m, int y) : day(d), month(m), year(y) {}
 
     int getYear() const { return year; }
-    
+
     void display() const { //ouputs the date
         cout << month << "/" << day << "/" << year;
     }
