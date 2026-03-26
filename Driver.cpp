@@ -22,7 +22,7 @@ Driver::Driver(int id, string name, int exp, string work, string medical, Addres
 Driver:: ~Driver() {
     delete[] tickets;
 }
-    
+
 int Driver::getID() const { //returns the id of the driver
     return id; 
 }
@@ -75,20 +75,20 @@ void Driver::addTicket(Date d, string loc) { // adds a ticket to the driver
     tickets[ticketCount++] = Ticket(d, loc);
 }
 
-    
+
 void Driver::display() const { // displays the driver's information
     cout << "ID: " << id << "\nName: " << name << endl;
     cout << "Experience: " << experienceYears << " years\n";
     cout << "Work: " << workCategory << "\nMedical: " << medicalCondition << endl;
-    
+
     cout << "License Date: ";
     licenseDate.display();
     cout << endl;
-    
+
     cout << "Address: ";
     address.display();
     cout << endl;
-    
+
     if (ticketCount > 0) {
         cout << "Tickets: " << endl;
         for (int i = 0; i < ticketCount; i++){
@@ -100,4 +100,3 @@ void Driver::display() const { // displays the driver's information
         cout << "No tickets\n";
     }
 }
-
