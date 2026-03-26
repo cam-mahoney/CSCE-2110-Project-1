@@ -9,7 +9,7 @@ class LinkedList {
 private:
     Node* head;
     Node* tail;
-    
+
 public:
     LinkedList();
     ~LinkedList();
@@ -26,4 +26,3 @@ public:
 
 
 #endif
-
