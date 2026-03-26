@@ -1,7 +1,7 @@
 #ifndef NODE_H
 #define NODE_H
 
-#pragma once // header guard, prevents multiple inclu from this header
+//#pragma once // header guard, prevents multiple inclu from this header
 
 #include "Driver.h" // for when driver is implemented
 
@@ -22,6 +22,7 @@ class Node {
         Node(Driver* driver);
 
         friend class LinkedList; // LL gets access to priv mem
+        friend class DriverDatabase; 
 };
 
 #endif
