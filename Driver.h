@@ -15,10 +15,10 @@ class Driver {
         string name;
 
         int experienceYears;
-    
+
         string workCategory;
         string medicalCondition;
-    
+
         Address address;
         Date dateOfBirth;
         Date licenseDate;
@@ -47,7 +47,7 @@ class Driver {
 
         int getExperience() const;
         Date getLicenseDate() const;
-        
+
         void display() const;
 
 };
