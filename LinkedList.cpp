@@ -4,7 +4,7 @@
 
 LinkedList::LinkedList() {
     head = nullptr;
-    taile = nullptr;
+    tail = nullptr;
 }
 
 LinkedList::~LinkedList() {
@@ -126,4 +126,12 @@ Driver* LinkedList::searchByID(int id) { // added later
     }
 
     return nullptr;
+}
+
+Node* LinkedList::getHead() const { 
+    return head;
+}
+
+Node* LinkedList::getTail() const { 
+    return tail;
 }
