@@ -15,11 +15,11 @@ class DriverDatabase {
         LinkedList inactiveDrivers;
 
         void moveToInactive(Driver* d);
-        Driver* createDriver();
+        //Driver* createDriver();
 
     public: 
         DriverDatabase(int size);
-        void mainFlow();
+        //void mainFlow();
         ~DriverDatabase();
 
         void loadFromFile();

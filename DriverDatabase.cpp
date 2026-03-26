@@ -35,7 +35,7 @@ void DriverDatabase::insertDriver(Driver* d) {
 }
 
 // create driver
-Driver* DriverDatabase::createDriver() {
+/*Driver* DriverDatabase::createDriver() {
     int id, exp;
     string name, work, medical, st, city, co, state, zip;
     int d, m, y, ld, lm, ly;
@@ -56,7 +56,7 @@ Driver* DriverDatabase::createDriver() {
     Date lic(ld, lm, ly);
 
     return new Driver(id, name, exp, work, medical, addr, dob, lic);
-}
+}*/
 
 //load
 void DriverDatabase::loadFromFile() {
@@ -176,7 +176,7 @@ void DriverDatabase::retrieveOldest(int N) {
     }
 }
 
-void DriverDatabase::mainFlow() {
+/*void DriverDatabase::mainFlow() {
     loadFromFile();
 
     while (true) {
@@ -209,4 +209,4 @@ void DriverDatabase::mainFlow() {
             removeDriver(id, true);
         }
     }
-}
+}*/
