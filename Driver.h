@@ -28,6 +28,8 @@ class Driver {
         int ticketCapacity;
 
     public:
+        Driver();
+
         Driver(int id, string name, int exp, string work, string medical, Address addr, Date dob, Date license);
 
         void addTicket(Date d, string loc);
@@ -38,7 +40,16 @@ class Driver {
 
         int getID() const;
         string getCounty() const;
+        string getAgeCategory() const;
+        string getExperienceCategory() const;
+        string getMedicalCategory() const;
+        string getWorkCategory() const;
+
+        int getExperience() const;
+        Date getLicenseDate() const;
+        
         void display() const;
+
 };
 
 #endif

@@ -14,6 +14,8 @@ private:
 public:
     Ticket();
 
+    Ticket(Date d,string loc);
+
     Date getDate() const; //returns the date of the ticket
 
     string getLocation() const;

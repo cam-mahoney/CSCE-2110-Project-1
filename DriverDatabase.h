@@ -8,14 +8,18 @@ class Driver;
 
 class DriverDatabase {
     private:
-        HashTable activeDrivers;
+        HashTable drivers;
 
         LinkedList countyList;
         LinkedList dateList;
         LinkedList inactiveDrivers;
 
+        void moveToInactive(Driver* d);
+        Driver* createDriver();
+
     public: 
         DriverDatabase(int size);
+        void mainFlow();
         ~DriverDatabase();
 
         void loadFromFile();

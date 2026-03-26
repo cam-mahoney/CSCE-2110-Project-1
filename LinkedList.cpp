@@ -4,6 +4,7 @@
 
 LinkedList::LinkedList() {
     head = nullptr;
+    taile = nullptr;
 }
 
 LinkedList::~LinkedList() {
@@ -11,9 +12,8 @@ LinkedList::~LinkedList() {
     while (current != nullptr) {
         Node* temp = current;
         current = current->next;
-
-        // delete stored Driver
         delete temp;
+
     }
 }
 
@@ -59,7 +59,7 @@ void LinkedList::insertByDate(Driver* driver) {
     }
 
     // insert at beginning (oldest)
-    if (driver->getIssueDate() < head->data->getIssueDate()) {
+    if (driver->getLicenseDate() < head->data->getLicenseDate()) {
         newNode->next = head;
         head = newNode;
         return;
@@ -68,7 +68,7 @@ void LinkedList::insertByDate(Driver* driver) {
     Node* current = head;
 
     while (current->next != nullptr &&
-           current->next->data->getIssueDate() < driver->getIssueDate()) {
+           current->next->data->getLicenseDate() < driver->getLicenseDate()) {
         current = current->next;
     }
 
