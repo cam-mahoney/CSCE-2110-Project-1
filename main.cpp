@@ -70,22 +70,70 @@ int main() {
             }
             case SEAERCH: {
                 // needs search implementation
+                int id;
+                cout << "Enter Driver ID: ";
+                cin >> id;
+
+                Driver* found = db.searchDriver(id);
+
+                if (found != nullptr){
+                    found->display();
+                }else{
+                    cout << "Driver not found.\n";
+                }
                 break;
             }
             case NEWEST: {
                 // needs newest implementation
+                int N;
+                cout << "Enter number of newest drivers: ";
+                cin >> N;
+
+                db.retrieveNewest(N);
                 break;
             }
             case OLDEST: {
-                // needs oldest implementation
+                // oldest implementation
+                int N;
+                cout << "Enter number of oldest drivers: ";
+                cin >> N;
+
+                db. retrieveOldest(N);
+                
                 break;
             }
             case REMOVE: {
-                // needs a removal implementation
+                //removal implementation
+                int id;
+                cout << "Enter Driver ID to remove: ";
+                cin >> id;
+
+                db.removeDriver(id,true); // true = move to inactive
+
+                cout << "Driver removed (if found).\n";
                 break;
             }
             case ADD_TICKET: {
-                // needs adding a ticket implementation
+                // ticket implementation
+                int id;
+                cout << "Enter Driver ID: ";
+                cin >> id;
+
+                Driver* d = db.searchDriver(id);
+                if(d_ptr != nullptr) {
+                    int d, m, y;
+                    string loc;
+                    cout << "Enter Date of ticket (D M Y): ";
+                    cin >> d >> m >> y;
+                    cout << "Enter Location:";
+                    cin >> loc;
+
+                    d_ptr->addTicket(Date(d,m,y), loc);
+
+                    cout << "Ticket added.\n";
+                }else{
+                    cout << "Driver not found.\n";
+                }
                 break;
             }
             case EXIT:
