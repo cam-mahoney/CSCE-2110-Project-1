@@ -13,21 +13,21 @@ DriverDatabase::~DriverDatabase() {
     while (current != nullptr) {
         Node* nextNode = current->next;
         delete current->data; 
-        
+
         current = nextNode;
     }
 
     current = inactiveDrivers.getHead();
     while (current != nullptr) {
         Node* nextNode = current->next;
-        
+
         delete current->data;
-        
+
         current = nextNode;
     }
 }
 
-   
+
 void DriverDatabase::insertDriver(Driver* d) {
     drivers.insert(d);
     countyList.insertByCounty(d);
@@ -60,24 +60,35 @@ Driver* DriverDatabase::createDriver() {
 
 //load
 void DriverDatabase::loadFromFile() {
-    ifstream file("drivers.tsv");
+    ifstream file("Drivers.tsv");
 
     if (!file.is_open()) {
         cout << "File error\n";
         return;
     }
-
+    
+    string dummy;
+    getline(file, dummy); // skips the first line of random titles
+    
     while (true) {
         int id, exp;
         string name, work, medical, county;
         int d, m, y;
         int ld, lm, ly;
         string hasTicket;
+        string tl, td, tm, ty;
 
         file >> id >> name >> exp >> work >> medical >> county
              >> d >> m >> y
              >> ld >> lm >> ly
              >> hasTicket;
+        file >> hasTicket;
+
+        if (hasTicket == "Y") {
+            file >> tl >> td >> tm >> ty;
+        } else {
+        }
+
 
         if (file.fail()) break;
 
