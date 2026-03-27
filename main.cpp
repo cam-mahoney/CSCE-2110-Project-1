@@ -48,10 +48,16 @@ int main() {
                 string name, work, medical, st, city, co, state, zip;
                 int d, m, y, ld, lm, ly;
 
-                cout << "Enter ID, Name, Experience: ";
-                cin >> id >> name >> exp;
-                cout << "Work Category, Medical: ";
-                cin >> work >> medical;
+                cout << "Enter ID: ", cin >> id;
+
+                cout << "Enter Name: ", cin >> name;
+
+                cout << "Enter Experience Years: ", cin >> exp;
+
+                cout << "Work Category: ", cin >> work;
+
+                cout << "Enter Medical: ", cin >> medical;
+                
                 cout << "Address (Street, City, County, State, Zip): ";
                 cin >> st >> city >> co >> state >> zip;
                 cout << "DOB (D M Y): ";
