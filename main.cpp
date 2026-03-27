@@ -50,18 +50,18 @@ int main() {
 
                 cout << "Enter ID: ", cin >> id;
 
-                cout << "Enter Name: ", cin >> name;
+                cout << "Enter Name (FIRST_LAST): ", cin >> name;
 
                 cout << "Enter Experience Years: ", cin >> exp;
 
                 cout << "Work Category: ", cin >> work;
 
-                cout << "Enter Medical: ", cin >> medical;
+                cout << "Enter Medical Information: ", cin >> medical;
 
                 cout << "\n------- Address -------\n";
-                cout << "Enter Street: ", cin >> st;
-                cout << "Enter City: ", cin >> city;
-                cout << "Enter County: ", cin >> co;
+                cout << "Enter Street Name: ", cin >> st;
+                cout << "Enter City Name: ", cin >> city;
+                cout << "Enter County Name: ", cin >> co;
                 cout << "Enter State: ", cin >> state;
                 cout << "Enter Zip: ", cin >> zip;
 
@@ -135,7 +135,7 @@ int main() {
                 cout << "Enter Driver ID: ";
                 cin >> id;
 
-                Driver* d_ptr = db.searchDriver(id);
+                Driver* d_ptr = db.searchDriver(id); 
                 if(d_ptr != nullptr) {
                     int d, m, y;
                     string loc;
