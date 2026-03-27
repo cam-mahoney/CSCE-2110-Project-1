@@ -81,6 +81,10 @@ void Driver::display() const { // displays the driver's information
     cout << "Experience: " << experienceYears << " years\n";
     cout << "Work: " << workCategory << "\nMedical: " << medicalCondition << endl;
 
+    cout << "Date of Birth: ";
+    dateOfBirth.display();
+    cout << endl;
+
     cout << "License Date: ";
     licenseDate.display();
     cout << endl;
