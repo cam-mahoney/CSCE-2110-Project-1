@@ -119,7 +119,7 @@ int main() {
                 cout << "Enter Driver ID: ";
                 cin >> id;
 
-                Driver* d = db.searchDriver(id);
+                Driver* d_ptr = db.searchDriver(id);
                 if(d_ptr != nullptr) {
                     int d, m, y;
                     string loc;
