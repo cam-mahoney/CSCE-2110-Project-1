@@ -36,14 +36,11 @@ int main() {
              << "0. Exit\n"
              << "Choose an option: ";
 
-        //int choice;
-        //cin >> choice; 
-
         cin >> input;
         choice = static_cast<menu_option>(input); // cast input to enum, for reading switch cases
 
         switch (choice) {
-            case ADD_DRIVER: { // moved to have all input collection in main, the original code is commented out in DriverDatabase .cpp and .h
+            case ADD_DRIVER: { // adds a new driver to database, prompts user for all info
                 int id, exp;
                 string name, work, medical, st, city, co, state, zip;
                 int d, m, y, ld, lm, ly;
@@ -84,8 +81,7 @@ int main() {
 
                 break;
             }
-            case SEAERCH: {
-                // needs search implementation
+            case SEAERCH: { // searches for a driver by ID and displays all info if they are found
                 int id;
                 cout << "Enter Driver ID: ";
                 cin >> id;
@@ -99,8 +95,7 @@ int main() {
                 }
                 break;
             }
-            case NEWEST: {
-                // needs newest implementation
+            case NEWEST: { // retrieves and displays the N newest drivers based on license date
                 int N;
                 cout << "Enter number of newest drivers: ";
                 cin >> N;
@@ -108,8 +103,7 @@ int main() {
                 db.retrieveNewest(N);
                 break;
             }
-            case OLDEST: {
-                // oldest implementation
+            case OLDEST: { // retrieves and displays the N oldest driver based on license date
                 int N;
                 cout << "Enter number of oldest drivers: ";
                 cin >> N;
@@ -118,8 +112,7 @@ int main() {
                 
                 break;
             }
-            case REMOVE: {
-                //removal implementation
+            case REMOVE: { // removes a driver by ID, moves them to an inactive list within the database
                 int id;
                 cout << "Enter Driver ID to remove: ";
                 cin >> id;
@@ -129,8 +122,7 @@ int main() {
                 cout << "Driver removed (if found).\n";
                 break;
             }
-            case ADD_TICKET: {
-                // ticket implementation
+            case ADD_TICKET: { // adds a tickt to a driver by ID, then prompts the user for the date and location of the ticket, adds it to the driver's record
                 int id;
                 cout << "Enter Driver ID: ";
                 cin >> id;
@@ -152,7 +144,7 @@ int main() {
                 }
                 break;
             }
-            case EXIT:
+            case EXIT: // exits program
                 cout << "Exiting program.\n";
                 break;
             default:
