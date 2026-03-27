@@ -83,7 +83,6 @@ int main() {
                 break;
             }
             case SEARCH: { // searches for a driver by ID and displays all info if they are found
-                // needs update, does not display DOB
                 int id;
                 cout << "Enter Driver ID: ";
                 cin >> id;
