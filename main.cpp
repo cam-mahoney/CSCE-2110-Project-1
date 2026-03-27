@@ -132,8 +132,11 @@ int main() {
                 if(d_ptr != nullptr) {
                     int d, m, y;
                     string loc;
-                    cout << "Enter Date of ticket (D M Y): ";
-                    cin >> d >> m >> y;
+
+                    char slash1, slash2;
+                    cout << "Enter Date of ticket (DD/MM/YYYY): ";
+                    cin >> d >> slash1 >> m >> slash2 >> y;
+                    
                     cout << "Enter Location:";
                     cin >> loc;
 
