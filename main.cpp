@@ -58,15 +58,18 @@ int main() {
 
                 cout << "Enter Medical: ", cin >> medical;
 
-                cout << "------- Address -------\n";
+                cout << "\n------- Address -------\n";
                 cout << "Enter Street: ", cin >> st;
                 cout << "Enter City: ", cin >> city;
                 cout << "Enter County: ", cin >> co;
                 cout << "Enter State: ", cin >> state;
                 cout << "Enter Zip: ", cin >> zip;
 
-                cout << "DOB (D M Y): ";
-                cin >> d >> m >> y;
+                cout << " \n------- Date of Birth -------\n";
+                cout << "Enter Day: ", cin >> d;
+                cout << "Enter Month: ", cin >> m;
+                cout << "Enter Year: ", cin >> y;
+
                 cout << "License Date (D M Y): ";
                 cin >> ld >> lm >> ly;
 
