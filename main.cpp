@@ -57,9 +57,14 @@ int main() {
                 cout << "Work Category: ", cin >> work;
 
                 cout << "Enter Medical: ", cin >> medical;
-                
-                cout << "Address (Street, City, County, State, Zip): ";
-                cin >> st >> city >> co >> state >> zip;
+
+                cout << "------- Address -------\n";
+                cout << "Enter Street: ", cin >> st;
+                cout << "Enter City: ", cin >> city;
+                cout << "Enter County: ", cin >> co;
+                cout << "Enter State: ", cin >> state;
+                cout << "Enter Zip: ", cin >> zip;
+
                 cout << "DOB (D M Y): ";
                 cin >> d >> m >> y;
                 cout << "License Date (D M Y): ";
