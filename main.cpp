@@ -33,7 +33,7 @@ int main() {
              << "4. Retrieve Oldest Drivers\n"
              << "5. Remove Driver\n"
              << "6. Add Ticket to Driver\n"
-             << "0. Exit\n"
+             << "0. Exit\n\n"
              << "Choose an option: ";
 
         cin >> input;
@@ -45,13 +45,15 @@ int main() {
                 string name, work, medical, st, city, co, state, zip;
                 int d, m, y, ld, lm, ly;
 
-                cout << "Enter ID: ", cin >> id;
+                cout << "\n\n------- Adding New Driver -------\n";
+
+                cout << "Enter ID (#####): ", cin >> id;
 
                 cout << "Enter Name (FIRST_LAST): ", cin >> name;
 
-                cout << "Enter Experience Years: ", cin >> exp;
+                cout << "Enter Experience Years (##): ", cin >> exp;
 
-                cout << "Work Category: ", cin >> work;
+                cout << "Work Category (e.g., Commercial, Passenger): ", cin >> work;
 
                 cout << "Enter Medical Information: ", cin >> medical;
 
@@ -63,15 +65,14 @@ int main() {
                 cout << "Enter Zip: ", cin >> zip;
 
                 cout << " \n------- Date of Birth -------\n";
-                cout << "Enter Day: ", cin >> d;
-                cout << "Enter Month: ", cin >> m;
-                cout << "Enter Year: ", cin >> y;
+                char slash1, slash2;
+                cout << "Enter Date of Birth (DD/MM/YYYY): ";
+                cin >> d >> slash1 >> m >> slash2 >> y;
 
                 cout << " \n------- License Date -------\n";
-                cout << "Enter Day: ", cin >> ld;
-                cout << "Enter Month: ", cin >> lm;
-                cout << "Enter Year: ", cin >> ly;
-
+                cout << "Enter License Date (DD/MM/YYYY): ";
+                cin >> ld >> slash1 >> lm >> slash2 >> ly;
+                
                 Address addr(st, city, co, state, zip);
                 Date dob(d, m, y);
                 Date lic(ld, lm, ly);
