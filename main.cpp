@@ -10,7 +10,7 @@ using namespace std;
 enum menu_option { // enum for menu options, easier to read and watnot
     EXIT = 0,
     ADD_DRIVER = 1,
-    SEAERCH = 2,
+    SEARCH = 2,
     NEWEST = 3,
     OLDEST = 4,
     REMOVE = 5,
@@ -82,7 +82,8 @@ int main() {
 
                 break;
             }
-            case SEAERCH: { // searches for a driver by ID and displays all info if they are found
+            case SEARCH: { // searches for a driver by ID and displays all info if they are found
+                // needs update, does not display DOB
                 int id;
                 cout << "Enter Driver ID: ";
                 cin >> id;
