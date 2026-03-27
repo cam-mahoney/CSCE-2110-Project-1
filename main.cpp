@@ -70,8 +70,10 @@ int main() {
                 cout << "Enter Month: ", cin >> m;
                 cout << "Enter Year: ", cin >> y;
 
-                cout << "License Date (D M Y): ";
-                cin >> ld >> lm >> ly;
+                cout << " \n------- License Date -------\n";
+                cout << "Enter Day: ", cin >> ld;
+                cout << "Enter Month: ", cin >> lm;
+                cout << "Enter Year: ", cin >> ly;
 
                 Address addr(st, city, co, state, zip);
                 Date dob(d, m, y);
