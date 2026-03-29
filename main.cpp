@@ -84,7 +84,7 @@ int main() {
             }
             case SEARCH: { // searches for a driver by ID and displays all info if they are found
                 int id;
-                cout << "Enter Driver ID: ";
+                cout << "\nEnter Driver ID: ";
                 cin >> id;
 
                 Driver* found = db.searchDriver(id);
@@ -92,13 +92,13 @@ int main() {
                 if (found != nullptr){
                     found->display();
                 }else{
-                    cout << "Driver not found.\n";
+                    cout << "\nDriver not found.\n";
                 }
                 break;
             }
             case NEWEST: { // retrieves and displays the N newest drivers based on license date
                 int N;
-                cout << "Enter number of newest drivers: ";
+                cout << "\nEnter number of newest drivers: ";
                 cin >> N;
 
                 db.retrieveNewest(N);
@@ -106,7 +106,7 @@ int main() {
             }
             case OLDEST: { // retrieves and displays the N oldest driver based on license date
                 int N;
-                cout << "Enter number of oldest drivers: ";
+                cout << "\nEnter number of oldest drivers: ";
                 cin >> N;
 
                 db. retrieveOldest(N);
@@ -115,17 +115,17 @@ int main() {
             }
             case REMOVE: { // removes a driver by ID, moves them to an inactive list within the database
                 int id;
-                cout << "Enter Driver ID to remove: ";
+                cout << "\nEnter Driver ID to remove: ";
                 cin >> id;
 
                 db.removeDriver(id,true); // true = move to inactive
 
-                cout << "Driver removed (if found).\n";
+                cout << "\nDriver removed.\n";
                 break;
             }
             case ADD_TICKET: { // adds a tickt to a driver by ID, then prompts the user for the date and location of the ticket, adds it to the driver's record
                 int id;
-                cout << "Enter Driver ID: ";
+                cout << "\nEnter Driver ID: ";
                 cin >> id;
 
                 Driver* d_ptr = db.searchDriver(id); 
@@ -142,17 +142,17 @@ int main() {
 
                     d_ptr->addTicket(Date(d,m,y), loc);
 
-                    cout << "Ticket added.\n";
+                    cout << "\nTicket added.\n";
                 }else{
-                    cout << "Driver not found.\n";
+                    cout << "\nDriver not found.\n";
                 }
                 break;
             }
             case EXIT: // exits program
-                cout << "Exiting program.\n";
+                cout << "\nExiting program.\n";
                 break;
             default:
-                cout << "Invalid option. Please try again.\n";
+                cout << "\nInvalid option. Please try again.\n";
         }
     } while (choice != EXIT);
 
