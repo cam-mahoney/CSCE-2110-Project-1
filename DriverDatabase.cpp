@@ -34,30 +34,6 @@ void DriverDatabase::insertDriver(Driver* d) {
     dateList.insertByDate(d);
 }
 
-// create driver
-/*Driver* DriverDatabase::createDriver() {
-    int id, exp;
-    string name, work, medical, st, city, co, state, zip;
-    int d, m, y, ld, lm, ly;
-
-    cout << "Enter ID, Name, Experience: ";
-    cin >> id >> name >> exp;
-    cout << "Work Category, Medical: ";
-    cin >> work >> medical;
-    cout << "Address (Street, City, County, State, Zip): ";
-    cin >> st >> city >> co >> state >> zip;
-    cout << "DOB (D M Y): ";
-    cin >> d >> m >> y;
-    cout << "License Date (D M Y): ";
-    cin >> ld >> lm >> ly;
-
-    Address addr(st, city, co, state, zip);
-    Date dob(d, m, y);
-    Date lic(ld, lm, ly);
-
-    return new Driver(id, name, exp, work, medical, addr, dob, lic);
-}*/
-
 //load
 void DriverDatabase::loadFromFile() {
     ifstream file("Drivers.tsv");
